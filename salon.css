@@ -1,0 +1,217 @@
+/* 🌟 Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🌈 Dark Luxury Background */
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* 📦 Glassmorphism Container */
+.container {
+    width: 95%;
+    max-width: 1100px;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 🏷 Neon Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #00f5ff;
+
+    text-shadow: 
+        0 0 5px #00f5ff,
+        0 0 10px #00f5ff,
+        0 0 20px #00f5ff;
+
+    animation: glow 2s infinite alternate;
+}
+
+/* 🎛 Controls */
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* 🔘 Inputs & Select */
+select, input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    outline: none;
+
+    background: rgba(0,0,0,0.4);
+    color: white;
+
+    transition: 0.3s;
+}
+
+/* ✨ Neon Focus Effect */
+select:focus, input:focus {
+    border-color: #00f5ff;
+    box-shadow: 
+        0 0 5px #00f5ff,
+        0 0 10px #00f5ff;
+}
+
+/* 🎯 Neon Buttons */
+button {
+    background: transparent;
+    color: #00f5ff;
+    border: 1px solid #00f5ff;
+
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.3s;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🔥 Hover Glow */
+button:hover {
+    background: #00f5ff;
+    color: black;
+
+    box-shadow: 
+        0 0 10px #00f5ff,
+        0 0 20px #00f5ff;
+
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* 📊 Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: rgba(0, 245, 255, 0.2);
+    color: #00f5ff;
+    padding: 10px;
+
+    text-shadow: 0 0 5px #00f5ff;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+/* 💰 Grand Total */
+.total-section {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    color: #00f5ff;
+
+    text-shadow: 
+        0 0 5px #00f5ff,
+        0 0 10px #00f5ff;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 5px #00f5ff,
+            0 0 10px #00f5ff;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #00f5ff,
+            0 0 20px #00f5ff,
+            0 0 40px #00f5ff;
+    }
+}
+
+/* 🖨 Print Mode */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    .no-print {
+        display: none;
+      }
+    
+
+    button, select, input {
+        display: none;
+    }
+
+    .container {
+        background: white;
+        color: black;
+        box-shadow: none;
+        border: none;
+    }
+
+    h1 {
+        color: black;
+        text-shadow: none;
+    }
+
+    th {
+        color: black;
+        background: #eee;
+        text-shadow: none;
+    }
+
+    .total-section {
+        color: black;
+        text-shadow: none;
+    }
+
+    .customer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+}

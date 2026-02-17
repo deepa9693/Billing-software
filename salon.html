@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salon Billing</title>
+    <link rel="stylesheet" href="salon.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>💇 Salon Billing</h1>
+
+    <!-- ✅ CUSTOMER SECTION -->
+    <div class="customer">
+        <input type="text" id="custName" placeholder="Customer Name">
+        <input type="number" id="custPhone" placeholder="Phone Number" onblur="detectCustomer()">
+        <div id="customerStatus"></div>
+    </div>
+
+    <div class="entry">
+
+        <select id="category" onchange="loadServices()">
+            <option value="">Select Category</option>
+            <option value="hair">Hair style</option>
+            <option value="face">Face</option>
+            <option value="beard">Beard Styles</option>
+        </select>
+
+        <select id="service" onchange="setPrice()">
+            <option value="">Select Service</option>
+        </select>
+
+        <input type="number" id="qty" placeholder="Count">
+        <input type="number" id="price" placeholder="Price">
+
+        <button type="button" onclick="addItem()">Add</button>
+    </div>
+
+    <div id="billSection">
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th class="no-print">Action</th>
+                </tr>
+            </thead>
+            <tbody id="billBody"></tbody>
+        </table>
+
+        <h2>Total: ₹ <span id="grandTotal">0</span></h2>
+    </div>
+
+    <div class="buttons">
+        <button type="button" onclick="printBill()">Print</button>
+        <button type="button" onclick="clearBill()">Clear</button>
+    </div>
+
+</div>
+
+<script src="salon.js"></script>
+
+</body>
+</html>

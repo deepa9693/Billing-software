@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloth Shop Billing</title>
+    <link rel="stylesheet" href="cloth.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>👕 Cloth Shop Billing</h1>
+
+    <!-- ✅ Customer + Invoice -->
+    <div class="top-bar">
+        <div>
+            <label>Invoice No:</label>
+            <span id="invoiceNo"></span>
+        </div>
+        <div>
+            <label>Date:</label>
+            <span id="billDate"></span>
+        </div>
+    </div>
+
+    <div class="customer">
+        <input type="text" id="customerName" placeholder="Customer Name">
+        <input type="text" id="customerPhone" placeholder="Phone Number">
+    </div>
+
+    <!-- ✅ Entry -->
+    <div class="entry">
+
+        <select id="category" onchange="loadProducts()">
+            <option value="">Category</option>
+            <option value="mens">Men's Wear</option>
+            <option value="womens">Women's Wear</option>
+            <option value="kids">Kids Wear</option>
+        </select>
+
+        <select id="product" onchange="setPrice()">
+            <option value="">Product</option>
+        </select>
+
+        <select id="size">
+            <option value="S">Size S</option>
+            <option value="M">Size M</option>
+            <option value="L">Size L</option>
+            <option value="XL">Size XL</option>
+        </select>
+
+        <input type="number" id="qty" placeholder="Qty">
+        <input type="number" id="price" placeholder="Price">
+
+        <button onclick="addItem()">Add</button>
+    </div>
+
+    <!-- ✅ Bill -->
+    <div id="printArea">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="billBody"></tbody>
+        </table>
+
+        <!-- ✅ Discount -->
+        <div class="discount">
+            <label>Discount:</label>
+            <input type="number" id="discount" value="0" onchange="renderBill()"> %
+        </div>
+
+        <h2>Total: ₹ <span id="grandTotal">0</span></h2>
+    </div>
+
+    <!-- ✅ Buttons -->
+    <div class="buttons">
+        <button onclick="printBill()">Print</button>
+        <button onclick="clearBill()">Clear</button>
+        <a href="index.html"><button>Back</button></a>
+    </div>
+
+</div>
+
+<script src="cloth.js"></script>
+
+</body>
+</html>
